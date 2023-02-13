@@ -1,22 +1,24 @@
 const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
   entry: "./app/Main.js",
   output: {
     publicPath: "/",
-    path: path.resolve(__dirname, "app"),
+    path: path.resolve(__dirname, "build"),
     filename: "bundled.js"
   },
   mode: "development",
   devtool: "source-map",
   devServer: {
-    port: 3000,
-    static: {
-      directory: path.join(__dirname, "app")
-    },
-    hot: true,
-    liveReload: false,
-    historyApiFallback: { index: "index.html" }
+    contentBase: "./build"
+    // port: 3000,
+    // static: {
+    //   directory: path.join(__dirname, "app")
+    // },
+    // hot: true,
+    // liveReload: false,
+    // historyApiFallback: { index: "index.html" }
   },
   module: {
     rules: [
@@ -31,5 +33,10 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve("./index.html")
+    })
+  ]
 }
