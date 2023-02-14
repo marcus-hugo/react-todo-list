@@ -1,25 +1,16 @@
 const path = require("path")
+
 module.exports = {
-  entry: "./src/index.js",
+  entry: path.resolve(__dirname, "./src/index.js"),
   output: {
     path: path.resolve(__dirname, "./dist"),
-    publicPath: "/",
-    filename: "bundle.js"
-  },
-  devServer: {
-    port: 3000,
-    static: {
-      directory: path.join(__dirname, "src")
-    },
-    hot: true,
-    liveReload: false,
-    historyApiFallback: { index: "index.html" }
+    filename: "bundled.js"
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /(node_modules)/,
+        test: /\.(js)$/,
+        exclude: /node_modules/,
         use: {
           loader: "babel-loader",
           options: {
@@ -28,5 +19,13 @@ module.exports = {
         }
       }
     ]
+  },
+  resolve: {
+    extensions: ["*", ".js"]
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "src")
+    }
   }
 }
