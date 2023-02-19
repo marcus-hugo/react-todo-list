@@ -1,0 +1,103 @@
+/* -------------- */
+/* General styles */
+/* -------------- */
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--background);
+  color: var(--text);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 50.398px);
+}
+
+footer {
+  padding: 1rem 0;
+}
+
+h1 {
+  color: var(--heading);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+fieldset,
+ul {
+  max-width: 65ch;
+}
+
+fieldset {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  border-style: solid;
+}
+
+ul {
+  list-style: none;
+  padding: 0 1rem;
+}
+
+li {
+  margin: 7px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li p {
+  display: inline;
+  margin: 0 7px;
+}
+
+li span {
+  display: flex;
+  align-items: center;
+}
+
+li input[type="checkbox"] {
+  margin: 0 7px;
+}
+
+li button {
+  color: inherit;
+  border-style: inset;
+  border: 2px;
+  padding: 1px 6px;
+}
+
+i {
+  font-size: 1.4rem;
+}
+
+// Button styles
+.add-button,
+.delete-button {
+  border: none;
+  border-radius: 3px;
+  padding: 5px 9px;
+  background: var(--btn-bg-clr);
+  display: flex;
+  align-items: center;
+}
+
+.add-button:hover {
+  background: var(--btn-add-bg-hover);
+  color: var(--btn-add-clr-hover);
+}
+
+.delete-button:hover {
+  background: var(--btn-delete-bg-hover);
+  color: var(--btn-delete-clr-hover);
+}

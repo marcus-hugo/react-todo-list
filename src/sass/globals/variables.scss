@@ -1,0 +1,44 @@
+:root {
+  color-scheme: dark light;
+  --clr-light: #fafafa;
+  --clr-dark: #171717;
+  --clr-heading-dark: #0891b2;
+  --clr-heading-light: #a5f3fc;
+  --btn-bg-light: #f5f5f5;
+  --btn-bg-dark: #262626;
+  --btn-add-bg-hover-dark: #0e7490;
+  --btn-add-bg-hover-light: #ecfeff;
+  --btn-delete-bg-hover-dark: #991b1b;
+  --btn-delete-bg-hover-light: #fef2f2;
+  --bi-plus-clr: #a5f3fc;
+  --bi-x-clr: #ef4444;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--clr-dark);
+    --text: var(--clr-light);
+    --heading: var(--clr-heading-light);
+    --btn-bg-clr: var(--btn-bg-dark);
+
+    --btn-add-bg-hover: var(--btn-add-bg-hover-dark);
+    --btn-add-clr-hover: var(--clr-light);
+    --btn-delete-bg-hover: var(--btn-delete-bg-hover-dark);
+    --btn-delete-clr-hover: var(--clr-light);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: var(--clr-light);
+    --text: var(--clr-dark);
+    --heading: var(--clr-heading-dark);
+    --btn-bg-clr: var(--btn-bg-light);
+
+    --btn-add-bg-hover: var(--btn-add-bg-hover-dark);
+    --btn-add-clr-hover: var(--clr-light);
+
+    --btn-delete-bg-hover: var(--btn-delete-bg-hover-dark);
+    --btn-delete-clr-hover: var(--clr-light);
+  }
+}

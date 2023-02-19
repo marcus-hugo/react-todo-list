@@ -1,15 +1,32 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
+import Footer from "./components/Footer"
+
 const useState = React.useState
 const useEffect = React.useEffect
 
 function Main() {
   const [items, setItems] = useState([])
 
+  // run only once when the component is rendered
+  useEffect(() => {
+    if (localStorage.getItem("listItems")) {
+      setItems(JSON.parse(localStorage.getItem("listItems")))
+    }
+  }, [])
+
+  // run every time state changes
+  useEffect(() => {
+    localStorage.setItem("listItems", JSON.stringify(items))
+  }, [items])
+
   return (
     <>
       <main>
-        <h1>My React Todo List</h1>
+        <h1>
+          React Todo List App <i class="bi bi-list-check" aria-hidden="true"></i>
+        </h1>
+
         <ListForm setItems={setItems} />
         <ul>
           {items.map(item => (
@@ -17,6 +34,7 @@ function Main() {
           ))}
         </ul>
       </main>
+      <Footer />
     </>
   )
 }
@@ -36,7 +54,9 @@ function ListForm(props) {
       <fieldset>
         <legend>Add an item</legend>
         <input value={entry} onChange={e => setEntry(e.target.value)} placeholder="i.e. laundry" />
-        <button>Add Item</button>
+        <button className="add-button">
+          <i class="bi bi-plus" alt="add item"></i>Add
+        </button>
       </fieldset>
     </form>
   )
@@ -49,7 +69,13 @@ function Item(props) {
   }
   return (
     <li>
-      {props.entry} <button onClick={handleDelete}>Delete</button>
+      <span>
+        <input type="checkbox" />
+        <p>{props.entry}</p>
+      </span>
+      <button onClick={handleDelete} className="delete-button">
+        <i class="bi bi-x" alt="delete item"></i>Delete
+      </button>
     </li>
   )
 }
