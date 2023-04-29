@@ -24,7 +24,7 @@ function Main() {
     <>
       <main>
         <h1>
-          React Todo List App <i class="bi bi-list-check" aria-hidden="true"></i>
+          Todo List<i class="bi bi-list-check" aria-hidden="true"></i>
         </h1>
 
         <ListForm setItems={setItems} />
