@@ -22,4 +22,4 @@ I feel that with more practice, it is becoming more clear on how it works. With 
 
 ### `useEffect`
 
-This will take two parameters with the first a callback function and the second the state. So when the state is update the function will run. In this app it's used to set/update local storage and and state.
+This will take in two parameters with the first a callback function and the second the state. So when the state is updated the function will run. In this app it's used to set/update local storage and and state.
