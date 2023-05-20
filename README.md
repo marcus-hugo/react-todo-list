@@ -3,7 +3,7 @@
 ## Overview
 
 I wanted to test my knowlege of React after completing the '10
-day of React' from Brad Sciff's course 'React for the Rest of Us' on Udemy.
+day of React' from Brad Schiff's course 'React for the Rest of Us' on Udemy.
 
 Though I have build a vanilla js todo list app and prior React learning from Scrimba, I felt like this would be a great
 appliction for a React project.
